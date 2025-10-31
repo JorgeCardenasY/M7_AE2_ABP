@@ -1,7 +1,9 @@
 import os
 from pathlib import Path
-import pymysql
-pymysql.install_as_MySQLdb()
+# import pymysql
+# pymysql.install_as_MySQLdb()
+# import dj_database_url
+import psycopg2
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -67,12 +69,12 @@ WSGI_APPLICATION = 'mi_proyecto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'crud_db',          # Nombre de la base de datos
-        'USER': 'root',        # Usuario de MySQL
+        'USER': 'postgres',        # Usuario de MySQL
         'PASSWORD': 'a4t5one3', # Contraseña
         'HOST': 'localhost',         # Servidor de MySQL
-        'PORT': '3306',              # Puerto por defecto
+        'PORT': '5432',              # Puerto por defecto
     }
 }
 
